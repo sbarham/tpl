@@ -1,0 +1,7 @@
+- [X] play with stuff
+- [ ] get this pushed to github
+- [ ] get dns set up
+- [ ] get me access via vpn? ssh?
+- [ ] preprpocessing script
+- [ ] scraping all historical data for all buoys
+

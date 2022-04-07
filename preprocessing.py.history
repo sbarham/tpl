@@ -1,0 +1,46 @@
+ 1/1: import pandas as pd
+ 1/2: ls
+ 1/3: cd data/
+ 1/4: ls
+ 1/5: cd by-year/
+ 1/6: ls
+ 1/7: df = pd.read_csv('tplm2h1985.txt', delim_whitespace=True)
+ 1/8: df
+ 1/9: df.columns
+1/10: df.iloc[0]
+1/11: df.iloc[0].YY
+1/12: ls
+1/13: cd ..
+1/14: ls
+1/15: head data-description.txt
+1/16: !head data-description.txt
+ 2/1: cd by-year/
+ 2/2: ls
+ 2/3: head tplm2h1985.txt
+ 2/4: !head tplm2h1985.txt
+ 2/5: from pathlib import Path
+ 2/6: cwd = Path('.')
+ 2/7: fnames = [f for f in cwd.glob('*.txt') if f.is_file()]
+ 2/8: fnames
+ 2/9: dfs = [pd.read_csv(path, delim_whitespace=True) for path in fnames]
+2/10: import pandas as pd
+2/11: dfs = [pd.read_csv(path, delim_whitespace=True) for path in fnames]
+2/12: dfs
+2/13: set([df.columns for df in dfs])
+2/14: type(df.columns)
+2/15: dfs[0].columns
+2/16: type(dfs[0].columns)
+   1: from pathlib import Path
+   2: fnames = [f for f in cwd.glob('*.txt') if f.is_file()]
+   3: cwd = Path('.')
+   4: fnames = [f for f in cwd.glob('*.txt') if f.is_file()]
+   5: dfs = [pd.read_csv(path, delim_whitespace=True) for path in fnames]
+   6: import pandas as pd
+   7: dfs = [pd.read_csv(path, delim_whitespace=True) for path in fnames]
+   8: len(dfs)
+   9: dfs[0].columns.tolist()
+  10: set([df.columns.tolist() for df in dfs])
+  11: set([col_name for df in dfs for col_name in df.columns.tolist()])
+  12: datetime
+  13: !datetime
+  14: %history -g -f preprocessing.py
